@@ -320,6 +320,9 @@ Xorriso_sieve_get_result;
 Xorriso_start_msg_watcher;
 Xorriso_startup_libraries;
 Xorriso_stop_msg_watcher;
+xo_back_trace;
+xo_log;
+xo_buffer_log;
 local: *;
 };
 

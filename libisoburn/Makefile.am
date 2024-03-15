@@ -27,6 +27,8 @@ libisoburn_libisoburn_la_SOURCES = \
 	xorriso/sfile.c \
 	xorriso/aux_objects.h \
 	xorriso/aux_objects.c \
+	xorriso/xorriso_log.c \
+	xorriso/xorriso_log.h \
 	xorriso/findjob.h \
 	xorriso/findjob.c \
 	xorriso/check_media.h \
@@ -49,7 +51,6 @@ libisoburn_libisoburn_la_SOURCES = \
 	xorriso/opts_d_h.c \
 	xorriso/opts_i_o.c \
 	xorriso/opts_p_z.c \
-	xorriso/xorriso_log.c \
 \
 	xorriso/xorrisoburn.h \
 	xorriso/base_obj.h \

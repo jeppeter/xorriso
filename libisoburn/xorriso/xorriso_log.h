@@ -1,9 +1,6 @@
 #ifndef __XORRISO_LOG_H_1E7C2807608BE5FA0E76787265D50FF7__
 #define __XORRISO_LOG_H_1E7C2807608BE5FA0E76787265D50FF7__
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus*/
 
 
 #define XORRISO_LOG_ERROR              0
@@ -25,8 +22,5 @@ extern "C" {
 
 
 
-#ifdef __cplusplus
-};
-#endif /* __cplusplus*/
 
 #endif /* __XORRISO_LOG_H_1E7C2807608BE5FA0E76787265D50FF7__ */

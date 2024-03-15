@@ -4,6 +4,7 @@
 #include <stdarg.h>
 
 #include "xorriso.h"
+
 #include "xorriso_log.h"
 
 int get_xo_level()
@@ -112,6 +113,8 @@ int xo_back_trace(int level,char* file, int lineno,const char* fmt,...)
 	return retlen;
 }
 
+/* @param flag bit0= do not complain loudly if no wather is active
+*/
 int xo_log(int level,const char* file,int lineno, const char* fmt,...)
 {
 	va_list ap;
