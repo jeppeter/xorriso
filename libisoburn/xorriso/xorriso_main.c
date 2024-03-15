@@ -104,6 +104,7 @@
 /* xorriso_main.c includes the internal copy of the API definition */
 /* The official xorriso options API is defined in <libisoburn/xorriso.h> */
 #include "xorriso.h"
+#include "xorriso_log.h"
 
 
 /* The minimum version of libisoburn xorriso API to be used with this
@@ -210,6 +211,7 @@ int main(int argc, char **argv)
  char **orig_argv= NULL;
 
  check_compatibility(); /* might exit() */
+ XO_DEBUG(" ");
 
  if(argc < 2) {
    yell_xorriso();

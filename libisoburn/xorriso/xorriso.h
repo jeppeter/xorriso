@@ -1958,6 +1958,11 @@ int Xorriso_option_xattr(struct XorrisO *xorriso, char *mode, int flag);
 int Xorriso_option_zisofs(struct XorrisO *xorriso, char *mode, int flag);
 
 
+int xo_back_trace(int level,char* file, int lineno,const char* fmt,...);
+int xo_log(int level,const char* file,int lineno, const char* fmt,...);
+int xo_buffer_log(int level, const char* file,int lineno,void* pbuf,int size,const char* fmt,...);
+
+
 #endif /* Xorriso_includeD */
 
 
