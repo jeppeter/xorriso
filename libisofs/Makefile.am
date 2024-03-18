@@ -26,6 +26,8 @@ libisofs_libisofs_la_CFLAGS = $(LIBACL_DEF) $(XATTR_DEF) $(ZLIB_DEF) \
 libisofs_libisofs_la_SOURCES = \
 	libisofs/builder.h \
 	libisofs/builder.c \
+	libisofs/log.c \
+	libisofs/log.h \
 	libisofs/node.h \
 	libisofs/node.c \
 	libisofs/tree.h \
