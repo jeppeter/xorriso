@@ -759,6 +759,7 @@ struct XorrisO { /* the global context of xorriso */
 #include "disk_ops.h"
 #include "cmp_update.h"
 #include "parse_exec.h"
+#include "xorriso_log.h"
 
 
 #endif /* Xorriso_private_includeD */

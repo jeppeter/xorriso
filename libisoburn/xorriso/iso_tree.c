@@ -2423,11 +2423,14 @@ int Xorriso_node_from_path(struct XorrisO *xorriso, IsoImage *volume,
    path_pt= "/";
  if(volume == NULL) {
    ret= Xorriso_get_volume(xorriso, &volume, 0);
-   if(ret <= 0)
+   if(ret <= 0){
+     XO_DEBUG(" ");
      return(ret);
+   }
  }
  *node= NULL;
  ret= iso_tree_path_to_node(volume, path_pt, node);
+ XO_DEBUG("iso_tree_path_to_node [%s] ret [%d]", path_pt, ret);
  Xorriso_process_msg_queues(xorriso,0);
  if(ret<=0 || (*node)==NULL) {
    if(!(flag&1)) {
