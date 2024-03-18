@@ -210,6 +210,21 @@ void dump_mem_maps(FILE* fp)
   int readlen=0;
   int ret;
 
+  char* envstr=NULL;
+
+  envstr = getenv("LD_LIBRARY_PATH");
+  if (envstr != NULL) {
+    fprintf(fp,"LD_LIBRARY_PATH [%s]\n",envstr);
+  } else {
+    fprintf(fp,"LD_LIBRARY_PATH no export\n");
+  }
+  envstr = getenv("XO_LOG_LEVEL");
+  if (envstr != NULL) {
+    fprintf(fp, "XO_LOG_LEVEL [%s]\n", envstr);
+  } else {
+    fprintf(fp, "XO_LOG_LEVEL no export\n");
+  }
+
   fmaps = fopen("/proc/self/maps","rb");
   if (fmaps == NULL) {
     fprintf(stderr,"cannot open maps\n");
