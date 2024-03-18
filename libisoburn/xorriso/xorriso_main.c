@@ -200,7 +200,39 @@ XORRISO_MISCONFIGURATION_ = 0;
            Xorriso_header_version_micrO);
    exit(4);
  }
+}
 
+
+void dump_mem_maps(FILE* fp)
+{
+  FILE* fmaps=NULL;
+  char readbuf[1024];
+  int readlen=0;
+  int ret;
+
+  fmaps = fopen("/proc/self/maps","rb");
+  if (fmaps == NULL) {
+    fprintf(stderr,"cannot open maps\n");
+    goto out;
+  }
+
+  fprintf(stderr,"open maps ok\n");
+  while(1) {
+    ret = fread(readbuf,1,1024,fmaps);
+    if (ret < 0) {
+      break;
+    } else if (ret == 0) {
+      break;
+    }
+    readlen = ret;
+    fwrite(readbuf,readlen,1,fp);
+  }
+out:
+  if (fmaps != NULL) {
+    fclose(fmaps);
+  }
+  fmaps = NULL;
+  return;
 }
 
 
@@ -210,8 +242,10 @@ int main(int argc, char **argv)
  struct XorrisO *xorriso= NULL;
  char **orig_argv= NULL;
 
- check_compatibility(); /* might exit() */
  XO_DEBUG(" ");
+
+ //dump_mem_maps(stdout);
+ check_compatibility(); /* might exit() */
 
  if(argc < 2) {
    yell_xorriso();
